@@ -3,10 +3,20 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { IncludeComponent } from './include/include.component';
+import { HeaderComponent } from './include/header/header.component';
+import { PromiseComponent } from './promise/promise.component';
+import { ObservableComponent } from './observable/observable.component';
+import { ListComponent } from './observable/list/list.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    IncludeComponent,
+    HeaderComponent,
+    PromiseComponent,
+    ObservableComponent,
+    ListComponent
   ],
   imports: [
     BrowserModule,
