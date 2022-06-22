@@ -6,8 +6,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { ListComponent } from './observable/list/list.component';
 
 const routes: Routes = [
-  {path:'',redirectTo:'promise',pathMatch:'full'},
-  {path:'promise' , component:PromiseComponent},
+  {path:'' , component:PromiseComponent},
   {path:'observable',component:ObservableComponent,
   children:[
     {path:'',component:ListComponent},
