@@ -14,16 +14,22 @@ export class OfFromComponent implements OnInit {
 
   ngOnInit(): void { 
     // Of Example
-    const obs1 = of('Muhammad','Imad','Khan');
-    obs1.subscribe((res)=>{
+    const obs = of('Muhammad','Imad','Khan');
+    obs.subscribe((res)=>{
       console.log(res);
       this.designSrv.print(res,'elContainer');
     });
     let obj = {a:'Muhammad',b:'Imad',c:'Khan'};
-    const obs2 = of(obj);
-    obs2.subscribe((res)=>{
+    const obs1 = of(obj);
+    obs1.subscribe((res)=>{
       this.obsMsg = res;
       console.log('obsMsg => ' , res);
+    });
+    let obj1 = ['Muhammad','Imad','Khan'];
+    const obs2 = of(obj1);
+    obs2.subscribe((res:any)=>{
+      console.log(res);
+      this.designSrv.print(res,'elContainer2');
     });
     //emits values of any type
     const source = of({a:'Muhammad',b:'Imad',c:'Khan'},{ name: 'Brian' },['shah','ahmad','ali'], [1, 2, 3], function hello() {
