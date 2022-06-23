@@ -7,7 +7,7 @@ export class DesignService {
 
   constructor() { }
 
-  print(val: string, containerId: string){
+  print(val: any, containerId: string){
     let el = document.createElement('li');
     // el.innerText= 'RXJS Series ' + val;
     el.innerText= val;
