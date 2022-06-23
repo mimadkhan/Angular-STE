@@ -24,7 +24,6 @@ export class OfFromComponent implements OnInit {
     obs2.subscribe((res)=>{
       this.obsMsg = res;
       console.log('obsMsg => ' , res);
-      // this.designSrv.print(res,'elContainer2');
     });
     //emits values of any type
     const source = of({a:'Muhammad',b:'Imad',c:'Khan'},{ name: 'Brian' },['shah','ahmad','ali'], [1, 2, 3], function hello() {
@@ -33,8 +32,34 @@ export class OfFromComponent implements OnInit {
     //output: {name: 'Brian'}, [1,2,3], function hello() { return 'Hello' }
     const subscribe = source.subscribe(val => console.log(val));
 
-    //From Example
-    // const obs3 = from()
+    //From Example 
+    // Array
+    const obs3 = from(['Wasif','Ahmad','Ali']);
+    obs3.subscribe((res)=>{
+      console.log(res);
+      this.designSrv.print(res,'elContainer3');
+    });
+    // Promise
+    const promise = new Promise((resolve)=>{
+      setTimeout(()=>{
+        resolve('Promise resolve');
+      },3000);
+    });
+    // promise.then(res=>{
+    //   console.log(res);
+    // });
+    const obs4 = from(promise);
+    obs4.subscribe((res:any)=>{
+      console.log('from Promise => ',res)
+      this.designSrv.print(res,'elContainer4');
+    });
+
+    // String 
+    const obs5 = from('WelCome to RXJS Series');
+    obs5.subscribe((res)=>{
+      console.log(res);
+      this.designSrv.print(res,'elContainer5');
+    })
   }
 
 
